@@ -1,0 +1,61 @@
+#include "game.h"
+
+long long int game::money = 100000000;
+long long int game::money_bet = 0;
+long long int game::reward = 0;
+
+void game::setName(std::string name) {
+    this->name = name;
+}
+
+void game::setVersion(std::string version) {
+    this->version = version;
+}
+
+void game::getName() {
+    gotoxy(46,5);
+    textcolor(10);
+    std::cout << "Game: " << name << std::endl;
+}
+
+void game::getVersion() {
+    gotoxy(20,7);
+    textcolor(10);
+    std::cout << "Version: " << version << std::endl;
+}
+
+void game::bet() {
+    money_bet = 0;
+    textcolor(7);
+    gotoxy(15,8);
+    std::cout << "Nhập số điểm cược: ";
+    std::cin >> money_bet;
+    if(money_bet > money) {
+        money_bet = 0;
+        gotoxy(15,10);
+        std::cout << "Bạn không đủ điểm cược ! Không được thưởng dù thắng !" << std::endl;
+    }
+    else {
+        money -= money_bet;
+        gotoxy(15,10);
+        std::cout << "Cược thành công !" << std::endl;
+    }
+}
+
+void game::show_money() {
+    textcolor(7);
+    gotoxy(65,7);
+    std::cout << "Số điểm hiện tại bạn có là: " << money;
+}
+
+void game::updateMoney() {
+    if(win_lose) {
+        money += money_bet + money_bet * 0.9 + reward;
+        money_bet = 0;
+    }
+    money_bet = 0;
+}
+
+void game::bonus(int set) {
+    reward = set * money_bet;
+}
