@@ -12,19 +12,25 @@ void guess_number::set_result() {
 
 void guess_number::get_result() {
     gotoxy(50,18);
-    std::cout << "Kết quả là: " << result << std::endl;
+    if(language == 1)
+        std::cout << "Kết quả là: " << result << std::endl;
+    else std::cout << "Result: " << result << std::endl;
 }
 
 void guess_number::set_Selection() {
     count = 1;
     for(; count <= 3;count++) {
         gotoxy(30,12);
-        std::cout << "Lượt thứ " << count <<" (1 - 20): ";
+        if(language == 1)
+            std::cout << "Lượt thứ " << count <<" (1 - 20): ";
+        else std::cout << "Turn: " << count << "(1 - 20): ";
         std::cin >> selection;
         if(selection == result) {
             clearCharacter(30,70,14);
             gotoxy(30,14);
-            std::cout << "Bạn đã thắng !" << std::endl;
+            if(language == 1)
+                std::cout << "Bạn đã thắng !" << std::endl;
+            else std::cout << "You won ! " << std::endl;
             win_lose = true;
             bonus(7 - count);
             break;
@@ -34,10 +40,14 @@ void guess_number::set_Selection() {
             clearCharacter(30,70,14);
             gotoxy(30,14);
             if(selection > result) {
-                std::cout << "Giảm số xuống đi bạn ơi ! " << std::endl;
+                if(language == 1)
+                    std::cout << "Giảm số xuống đi bạn ơi ! " << std::endl;
+                else std::cout << "Please decrease the number ! " << std::endl;
             }
             if(selection < result) {
-                std::cout << "Tăng số lên đi bạn ! " << std::endl;
+                if(language == 1)
+                    std::cout << "Tăng số lên đi bạn ! " << std::endl;
+                else std::cout << "Please increase the number !" << std::endl;
             }
         }
         win_lose = false;
@@ -48,18 +58,24 @@ void guess_number::set_Selection() {
 void guess_number::notification() {
     gotoxy(30,21);
     if(win_lose) {
-        std::cout << "Bạn đã thắng ở lần chọn thứ " << count << std::endl;
+        if(language == 1)
+            std::cout << "Bạn đã thắng ở lần chọn thứ " << count << std::endl;
+        else std::cout << "You won on turn " << count << std::endl;
     }
     else {
-        std::cout << "Bạn đã thua !" << std::endl;
+        if(language == 1)
+            std::cout << "Bạn đã thua !" << std::endl;
+        else std::cout << "You lose !" << std::endl;
     }
 }
 
 void guess_number::control() {
     createBorder();
-    setName("Con số may mắn ! ");
+    if(language == 1)
+        setName("Con số may mắn ");
+    else setName("Guess the number ");
     getName();
-    setVersion("Beta 1.0");
+    setVersion("1.2");
     getVersion();
     show_money();
     bet();

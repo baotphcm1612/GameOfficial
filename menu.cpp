@@ -7,13 +7,21 @@ guess_number c;
 
 void gotoMenu() {
 	gotoxy(35,23);
-	std::cout << " Ấn phím bất kỳ để thoát ra menu game ! ";
+	if(language == 1)
+		std::cout << " Ấn phím bất kỳ để thoát ra menu game ! ";
+	else std::cout << "Press any key to back main menu ! ";
 }
 
 void warning() {
 	textcolor(7);
-	gotoxy(30,25);
-	std::cout << "Chơi game quá 180 phút mỗi ngày sẽ ảnh hưởng đến sức khỏe. ";
+	if(language == 1) {
+		gotoxy(30,25);
+		std::cout << "Chơi game quá 180 phút mỗi ngày sẽ ảnh hưởng đến sức khỏe. ";
+	}
+	else {
+		gotoxy(25,25);
+		std::cout << "Playing games for more than 180 minutes per day can adversely affect health.";
+	} 
 }
 
 void menu() {
@@ -30,39 +38,62 @@ void menu() {
 
 	textcolor(10);
 	gotoxy(15,8);
-	std::cout << "Phím 1:   Game Lớn Nhỏ (Không phải \"Tài Xỉu\")";
+	if(language == 1)
+		std::cout << "Phím 1:   Game Lớn Nhỏ (Không phải \"Tài Xỉu\")";
+	else std::cout << "Key 1:    Sic Bo ";
 
 	textcolor(11);
 	gotoxy(15,11);
-	std::cout << "Phím 2:   Game số chia may mắn ! (Bản quyền của nhóm)";
+	if(language == 1)
+		std::cout << "Phím 2:   Game số chia may mắn ! (Bản quyền của nhóm)";
+	else std::cout << "Key 2:    Lucky divisor "; 
 	
 	textcolor(5);
 	gotoxy(15,14);
-	std::cout << "Phím 3:   Game đoán số (Liều ăn nhiều điểm)";
+	if(language == 1)
+		std::cout << "Phím 3:   Game đoán số (Liều ăn nhiều điểm)";
+	else std::cout << "Key 3:    Guess the number ";
 	
 	textcolor(4);
 	gotoxy(15,17);
-	std::cout << "Phím 4:   Thoát Game (Good Bye !)";
+	if(language == 1)
+		std::cout << "Phím 4:   Thoát Game (Good Bye !)";
+	else std::cout << "Key 4:    Exit game ";
+	
 	
 	textcolor(3);
 	gotoxy(15,20);
-	std::cout << "Phím 5:   Hướng dẫn ";
+	if(language == 1)
+		std::cout << "Phím 5:   Hướng dẫn ";
+	else std::cout << "Key 5:    Guide ";
 	warning();
 }
 
 void guide() {
 	gotoxy(20,6);
-	std::cout << "Game Lớn Nhỏ: Luật chơi giống Tài Xỉu !" << std::endl;
+	if(language == 1)
+		std::cout << "Game Lớn Nhỏ: Luật chơi giống Tài Xỉu !" << std::endl;
+	else std::cout << "You chose Big and result >= 11, you win. Opposite...";
 	gotoxy(20,8);
-	std::cout << "Game số chia may mắn: Chọn con số bên dưới, nếu con số ngẫu nhiên của máy ";
+	if(language == 1)
+		std::cout << "Game số chia may mắn: Chọn con số bên dưới, nếu con số ngẫu nhiên của máy ";
+	else std::cout << "Lucky division game: Choose the number below, if the random number generated ";
 	gotoxy(20,9);
-	std::cout << "tạo ra chia hết cho số bạn vừa chọn thì bạn thắng. Tuy nhiên, số chỉ được ";
+	if(language == 1)
+		std::cout << "tạo ra chia hết cho số bạn vừa chọn thì bạn thắng. Tuy nhiên, số chỉ được ";
+	else std::cout << "by the machine is divisible by the number you just selected, you win. However,";
 	gotoxy(20,10);
-	std::cout << "phép chia hết cho 1 số, nếu số đó chia hết cho 1 trong các số còn lại thì ";
+	if(language == 1)
+		std::cout << "phép chia hết cho 1 số, nếu số đó chia hết cho 1 trong các số còn lại thì ";
+	else std::cout << "a number can only be divisible by 1 number, if that number is divisible by one";
 	gotoxy(20,11);
-	std::cout << "bạn vẫn thua nhé !" << std::endl;
+	if(language == 1)
+		std::cout << "bạn vẫn thua nhé !" << std::endl;
+	else std::cout << "of the remaining numbers, you still lose!" << std::endl;
 	gotoxy(20,13);
-	std::cout << "Game đoán số: dễ khỏi giải thích, chơi là hiểu à " << std::endl;
+	if(language == 1)
+		std::cout << "Game đoán số: dễ khỏi giải thích, chơi là hiểu à " << std::endl;
+	else std::cout << "Guess the number: Too easy to know how to play !" << std::endl;
 }
 
 void returnMenu() {

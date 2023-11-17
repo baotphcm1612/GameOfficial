@@ -1,5 +1,7 @@
 #include "game.h"
 
+int language;
+
 long long int game::money = 100000000;
 long long int game::money_bet = 0;
 long long int game::reward = 0;
@@ -28,24 +30,32 @@ void game::bet() {
     money_bet = 0;
     textcolor(7);
     gotoxy(15,8);
-    std::cout << "Nhập số điểm cược: ";
+    if(language == 1)
+        std::cout << "Nhập số điểm cược: ";
+    else std::cout << "Enter the number of points to bet: ";
     std::cin >> money_bet;
     if(money_bet > money) {
         money_bet = 0;
         gotoxy(15,10);
-        std::cout << "Bạn không đủ điểm cược ! Không được thưởng dù thắng !" << std::endl;
+        if(language == 1)
+            std::cout << "Bạn không đủ điểm cược ! Không được thưởng dù thắng !" << std::endl;
+        else std::cout << "You don't have enough betting points! No reward even if you win! " << std::endl;
     }
     else {
         money -= money_bet;
         gotoxy(15,10);
-        std::cout << "Cược thành công !" << std::endl;
+        if(language == 1)
+            std::cout << "Cược thành công !" << std::endl;
+        else std::cout << "Successful bet !" << std::endl;
     }
 }
 
 void game::show_money() {
     textcolor(7);
     gotoxy(65,7);
-    std::cout << "Số điểm hiện tại bạn có là: " << money;
+    if(language == 1)
+        std::cout << "Số điểm hiện tại bạn có là: " << money;
+    else std::cout << "Available points: " << money;
 }
 
 void game::updateMoney() {

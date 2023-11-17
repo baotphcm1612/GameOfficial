@@ -12,12 +12,14 @@ int main() {
     gotoxy(50,20);
     setLanguage();
     clearScreen();
-    gotoxy(35,24);
-    std::cout << "This game is for learning and research purposes!";
     gotoxy(35,26);
-    std::cout << "Game này tạo ra dành cho mục đích học tập và nghiên cứu!";
+    if(language == 1)
+        std::cout << "Game này tạo ra dành cho mục đích học tập và nghiên cứu!";
+    else std::cout << "This game is for learning and research purposes!";
     gotoxy(35,28);
-    std::cout << "Ấn phím bất kỳ để tiếp tục... ";
+    if(language == 1)
+        std::cout << "Ấn phím bất kỳ để tiếp tục...";
+    else std::cout << "Press any key to continue... ";
     _getch();
     clearScreen();
 

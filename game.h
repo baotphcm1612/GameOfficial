@@ -3,6 +3,7 @@
 #include <string>
 #include <random>
 #include "DoHoa.h"
+#include "language.h"
 
 #define refreshMoney clearCharacter(65,105,7)
 

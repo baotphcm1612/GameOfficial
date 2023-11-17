@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <conio.h>
 
-static int language = 0;
+extern int language;
 
 inline void setLanguage() {
     HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
