@@ -12,5 +12,12 @@ Trình biên dịch GCC (macOS)
 gcc -o main main.cpp big_small.cpp devided.cpp game.cpp guess_number.cpp menu.cpp
 
 
-Nguyen Quoc Bao - 01:52 AM - 17/11/2023
+Lỗi tiếng Việt fix theo cách này:
+B1: Mở Control Panel
+B2: Chọn Clock and Region
+B3: Chọn Region -> Chọn Tab Administrative
+B4: Chọn Change System Locale. Tích vào ô Use Unicode UTF-8 for worldwide language support
+B5: Khởi động lại thiết bị
+
+Nguyen Quoc Bao - 08:55 AM - 17/11/2023
 
