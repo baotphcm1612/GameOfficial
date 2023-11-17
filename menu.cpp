@@ -1,9 +1,5 @@
 #include "menu.h"
 #include "DoHoa.h"
-#define Button1 GetAsyncKeyState(0x31) & 0x8001
-#define Button2 GetAsyncKeyState(0x32) & 0x8001
-#define Button3 GetAsyncKeyState(0x33) & 0x8001
-#define Button4 GetAsyncKeyState(0x34) & 0x8001
 
 big_small a;
 devided b;
@@ -83,7 +79,6 @@ void play() {
     while(true) {
         if (GetNumberOfConsoleInputEvents(hInput, &cNumRead) > 0) {
             ReadConsoleInputA(hInput, irInBuf, cNumRead, &cNumRead);
-
             for (DWORD i = 0; i < cNumRead; ++i) {
                 if (irInBuf[i].EventType == KEY_EVENT && irInBuf[i].Event.KeyEvent.bKeyDown) {
                     switch (irInBuf[i].Event.KeyEvent.wVirtualKeyCode) {
@@ -109,6 +104,7 @@ void play() {
                             exit(0);
 						case 0x35: // phim5
 							clearScreen();
+							createBorder();
 							warning();
 							guide();
 							returnMenu();

@@ -22,6 +22,7 @@ void guess_number::set_Selection() {
         std::cout << "Lượt thứ " << count <<" (1 - 20): ";
         std::cin >> selection;
         if(selection == result) {
+            clearCharacter(30,70,14);
             gotoxy(30,14);
             std::cout << "Bạn đã thắng !" << std::endl;
             win_lose = true;
@@ -29,7 +30,8 @@ void guess_number::set_Selection() {
             break;
         }
         else if(count != 3){
-            clearCharacter(30,60,12);
+            clearCharacter(30,70,12);
+            clearCharacter(30,70,14);
             gotoxy(30,14);
             if(selection > result) {
                 std::cout << "Giảm số xuống đi bạn ơi ! " << std::endl;

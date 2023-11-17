@@ -1,5 +1,4 @@
-#ifndef DoHoa_H
-#define DoHoa_H
+#pragma once
 #include <iostream>
 #include <conio.h>
 #include <Windows.h>
@@ -32,7 +31,7 @@ inline void gotoxy(int x, int y) {
 }
 
 //Hàm xóa màn hình
-inline void clearScreen() {
+    inline void clearScreen() {
     COORD topLeft = {0, 0};
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO screen;
@@ -42,13 +41,6 @@ inline void clearScreen() {
     FillConsoleOutputCharacterA(console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
     FillConsoleOutputAttribute(console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE, screen.dwSize.X * screen.dwSize.Y, topLeft, &written);
     SetConsoleCursorPosition(console, topLeft);
-}
-
-inline void ToMau(int x, int y, char *a, int color) // x, y là tọa độ con trỏ cần nhảy đến để viết, a là chuỗi cần truyền vào, color là màu truyền vào.
-{
-	gotoxy(x, y);
-	textcolor(color);
-	cout << a;
 }
 
 // Ở trên là copy ở dưới team tự viết
@@ -79,4 +71,3 @@ inline void clearCharacter(int x,int x_end, int y) {
         std::cout << " ";
     }
 }
-#endif
