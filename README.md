@@ -21,3 +21,5 @@ B5: Khởi động lại thiết bị
 
 Nguyen Quoc Bao - 08:55 AM - 17/11/2023
 
+Game supported English
+
