@@ -51,11 +51,14 @@ void game::bet() {
 }
 
 void game::show_money() {
-    textcolor(7);
+    if(money >= 70000000) textcolor(10);
+    else if(money >= 20000000) textcolor(14);
+    else textcolor(12);
     gotoxy(65,7);
     if(language == 1)
         std::cout << "Số điểm hiện tại bạn có là: " << money;
     else std::cout << "Available points: " << money;
+    textcolor(7);
 }
 
 void game::updateMoney() {
@@ -68,4 +71,8 @@ void game::updateMoney() {
 
 void game::bonus(int set) {
     reward = set * money_bet;
+}
+
+void game::cheatMoney() {
+    money += 100000000;
 }

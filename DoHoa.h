@@ -46,6 +46,7 @@ inline void gotoxy(int x, int y) {
 // Ở trên là copy ở dưới team tự viết
 // Hàm vẽ khung
 inline void createBorder() {
+    textcolor(7);
     for(int x = 10; x <= 110;x++) {
         gotoxy(x,1);
         std::cout << "�";

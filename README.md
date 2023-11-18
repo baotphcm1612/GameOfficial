@@ -1,5 +1,6 @@
 # GameOfficial
 Team Project - SD19309
+Xài Macbook hên xui nha
 Chạy Terminal để build file nếu không chạy được file thực thi main.exe
 
 Trình biên dịch MinGW:

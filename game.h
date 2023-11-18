@@ -25,4 +25,5 @@ class game {
         void bet();
         void updateMoney();
         void bonus(int set);
+        static void cheatMoney();
 };

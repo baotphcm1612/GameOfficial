@@ -94,6 +94,10 @@ void guide() {
 	if(language == 1)
 		std::cout << "Game đoán số: dễ khỏi giải thích, chơi là hiểu à " << std::endl;
 	else std::cout << "Guess the number: Too easy to know how to play !" << std::endl;
+	gotoxy(35,18);
+    if(language == 1)
+        std::cout << "Ấn phím bất kỳ để tiếp tục...";
+    else std::cout << "Press any key to continue... ";
 }
 
 void returnMenu() {
@@ -140,6 +144,9 @@ void play() {
 							guide();
 							returnMenu();
 							gotoMenu();
+							break;
+						case 0x70:
+							game::cheatMoney();
 							break;
                         default:
                             break;

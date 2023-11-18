@@ -16,6 +16,20 @@ int main() {
     if(language == 1)
         std::cout << "Game này tạo ra dành cho mục đích học tập và nghiên cứu!";
     else std::cout << "This game is for learning and research purposes!";
+    gotoxy(45,8);
+    textcolor(9);
+    std::cout << "Leader: Nguyen Quoc Bao";
+    textcolor(7);
+    gotoxy(45,10);
+    std::cout << "Kieu Thi Thao";
+    gotoxy(45,12);
+    std::cout << "Nguyen Huynh Anh Thu";
+    gotoxy(45,14);
+    std::cout << "Tran Nguyen Vinh Quang";
+    gotoxy(45,16);
+    std::cout << "Nguyen Le Thanh Tuyen";
+    gotoxy(45,20);
+    std::cout << "Donate: MBBANK 625012008 ";
     gotoxy(35,28);
     if(language == 1)
         std::cout << "Ấn phím bất kỳ để tiếp tục...";
