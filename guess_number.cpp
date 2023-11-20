@@ -75,8 +75,6 @@ void guess_number::control() {
         setName("Con số may mắn ");
     else setName("Guess the number ");
     getName();
-    setVersion("1.2");
-    getVersion();
     show_money();
     bet();
     refreshMoney;

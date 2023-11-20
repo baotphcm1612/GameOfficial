@@ -10,20 +10,17 @@
 class game {
     private:
         std::string name;
-        std::string version;
         static long long int money;
         static long long int money_bet;
         static long long int reward;
     protected:
-        bool win_lose;
-    public:
-        void show_money();
+        static bool win_lose;
         void setName(std::string name);
         void getName();
-        void setVersion(std::string version);
-        void getVersion();
-        void bet();
-        void updateMoney();
+        static void bet();
+        static void show_money();
+        static void updateMoney();
         void bonus(int set);
+    public:
         static void cheatMoney();
 };

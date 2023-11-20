@@ -163,8 +163,6 @@ void devided::control() {
     else setName("Luckily divisor");
 
     getName();
-    setVersion("1.2");
-    getVersion();
     show_money();
     bet();
     refreshMoney;

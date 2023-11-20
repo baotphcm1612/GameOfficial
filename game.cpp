@@ -5,25 +5,16 @@ int language;
 long long int game::money = 100000000;
 long long int game::money_bet = 0;
 long long int game::reward = 0;
+bool game::win_lose = false;
 
 void game::setName(std::string name) {
     this->name = name;
-}
-
-void game::setVersion(std::string version) {
-    this->version = version;
 }
 
 void game::getName() {
     gotoxy(46,5);
     textcolor(10);
     std::cout << "Game: " << name << std::endl;
-}
-
-void game::getVersion() {
-    gotoxy(20,7);
-    textcolor(10);
-    std::cout << "Version: " << version << std::endl;
 }
 
 void game::bet() {

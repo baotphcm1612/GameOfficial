@@ -96,8 +96,6 @@ void big_small::control() {
     else setName("Sic Bo");
 
     getName();
-    setVersion("1.2");
-    getVersion();
     show_money();
     bet();
     refreshMoney;
