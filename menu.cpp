@@ -117,27 +117,27 @@ void play() {
             for (DWORD i = 0; i < cNumRead; ++i) {
                 if (irInBuf[i].EventType == KEY_EVENT && irInBuf[i].Event.KeyEvent.bKeyDown) {
                     switch (irInBuf[i].Event.KeyEvent.wVirtualKeyCode) {
-                        case 0x31:  // Phím 1
+                        case 0x31:  
 							clearScreen();
 							warning();
                             a.control();
 							returnMenu();
                             break;
-                        case 0x32:  // Phím 2
+                        case 0x32:  
 							clearScreen();
 							warning();
                             b.control();
 							returnMenu();
                             break;
-                        case 0x33:  // Phím 3
+                        case 0x33:  
 							clearScreen();
 							warning();
                             c.control();
 							returnMenu();
                             break;
-                        case 0x34:  // Phím 4 (Thoát)
+                        case 0x34:  
                             exit(0);
-						case 0x35: // phim5
+						case 0x35: 
 							clearScreen();
 							createBorder();
 							warning();
