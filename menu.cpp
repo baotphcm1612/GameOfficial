@@ -39,19 +39,19 @@ void menu() {
 	textcolor(10);
 	gotoxy(15,8);
 	if(language == 1)
-		std::cout << "Phím 1:   Game Lớn Nhỏ (Không phải \"Tài Xỉu\")";
+		std::cout << "Phím 1:   Game Lớn Nhỏ ";
 	else std::cout << "Key 1:    Sic Bo ";
 
 	textcolor(11);
 	gotoxy(15,11);
 	if(language == 1)
-		std::cout << "Phím 2:   Game số chia may mắn ! (Bản quyền của nhóm)";
+		std::cout << "Phím 2:   Game số chia may mắn ";
 	else std::cout << "Key 2:    Lucky divisor "; 
 	
 	textcolor(5);
 	gotoxy(15,14);
 	if(language == 1)
-		std::cout << "Phím 3:   Game đoán số (Liều ăn nhiều điểm)";
+		std::cout << "Phím 3:   Game đoán số ";
 	else std::cout << "Key 3:    Guess the number ";
 	
 	textcolor(4);
