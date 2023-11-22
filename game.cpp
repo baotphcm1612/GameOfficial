@@ -1,11 +1,20 @@
 #include "game.hpp"
+#include <mmsystem.h>
 
 int language;
-
 long long int game::money = 100000000;
 long long int game::money_bet = 0;
 long long int game::reward = 0;
 bool game::win_lose = false;
+
+void sound(bool isWin) {
+    if(isWin) {
+        PlaySound(TEXT("sound\\win.wav"),NULL,SND_FILENAME);
+    }
+    else {
+        PlaySound(TEXT("sound\\lose.wav"),NULL,SND_FILENAME);
+    }
+}
 
 void game::setName(std::string name) {
     this->name = name;
@@ -58,6 +67,7 @@ void game::updateMoney() {
         money_bet = 0;
     }
     money_bet = 0;
+    sound(win_lose);
 }
 
 void game::bonus(int set) {
