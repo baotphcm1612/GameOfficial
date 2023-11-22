@@ -1,11 +1,10 @@
 #pragma once
-#include "game.h"
+#include "game.hpp"
 
-class big_small : public game {
+class devided : public game {
     private:
         int selection;
-        int result[3];
-        int sum();
+        int result;
     public:
         void set_Selection();
         void get_Selection();

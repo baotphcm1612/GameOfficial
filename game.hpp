@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 #include <random>
-#include "DoHoa.h"
-#include "language.h"
+#include "DoHoa.hpp"
+#include "language.hpp"
 
 #define refreshMoney clearCharacter(65,105,7)
 

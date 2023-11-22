@@ -1,5 +1,5 @@
 #pragma once
-#include "game.h"
+#include "game.hpp"
 
 class guess_number : public game {
     private:

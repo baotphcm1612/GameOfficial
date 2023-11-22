@@ -1,4 +1,4 @@
-#include "menu.h"
+#include "menu.hpp"
 
 int main() {
     gotoxy(30,10);

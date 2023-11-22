@@ -1,5 +1,5 @@
-#include "devided.h"
-#include "menu.h"
+#include "devided.hpp"
+#include "menu.hpp"
 
 void devided::set_Selection() {
     gotoxy(30,12);

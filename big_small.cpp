@@ -1,5 +1,5 @@
-#include "big_small.h"
-#include "menu.h"
+#include "big_small.hpp"
+#include "menu.hpp"
 
 void big_small::set_Selection() {
     gotoxy(30,12);

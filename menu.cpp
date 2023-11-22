@@ -1,5 +1,5 @@
-#include "menu.h"
-#include "DoHoa.h"
+#include "menu.hpp"
+#include "DoHoa.hpp"
 
 big_small a;
 devided b;

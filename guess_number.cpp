@@ -1,5 +1,5 @@
-#include "guess_number.h"
-#include "menu.h"
+#include "guess_number.hpp"
+#include "menu.hpp"
 
 int guess_number::count = 0;
 
